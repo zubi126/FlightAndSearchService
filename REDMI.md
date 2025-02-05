@@ -1,20 +1,3 @@
-
--src
-   index.js //server
-   node.js/
-   controllers/
-   middlewares/
-   services/
-   utils/
-   config/
-   reprository
-
-
-
--tests[later]
-
-
-
 #welcome to flights  service
 
 
@@ -38,3 +21,4 @@
     "dialect": "mysql"
   }
 
+-once you have added ur db config as listed above ,go thr src folder from ur terminal and execute 'npm sequelize db:create'
