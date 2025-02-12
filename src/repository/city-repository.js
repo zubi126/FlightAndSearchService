@@ -15,6 +15,9 @@ async createCity({ name }){
     }
 }
 
+
+
+
 async deleteCity(cityId){
     try {
         
@@ -36,13 +39,22 @@ throw {error}
 }
 
 
+
+
+
 async updateCity(cityId, data){
     try {
-        const city = await City.update(data,{
-            where:{
-                id:cityId
-            }
-        })
+        // the above appproach also works but not return updatedd object
+        // const city = await City.update(data,{
+        //     where:{
+        //         id:cityId
+        //     }
+        // })
+        // return city;
+
+        const city = await City.findByPk(cityId);
+        city.name= data.name;
+        await city.save();
         return city;
     } catch (error) {
         console.log("something went wrong in repository layer");
@@ -59,7 +71,7 @@ throw {error}
 async getCity(cityId){
     try {
         const city = await City.findByPk(cityId)
-        return city
+        return city;
     } catch (error) {
         console.log("something went wrong in repository layer");
 
