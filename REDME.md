@@ -47,6 +47,14 @@ and then execute
 
 
 
+##tables
+
+###city---> id,name,created_at , updated_at
+
+##airport table----> id,name,adresss,city_at,created_at , updated_at 
+       Relationship==> city has many airports and  airports belongs to a city (one to many)
+
+       
 
 
 
@@ -54,8 +62,3 @@ and then execute
 
 
 
-
-
-##flight table 
-
---id----unique 
