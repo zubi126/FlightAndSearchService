@@ -8,6 +8,14 @@ const ApiRoutes = require('./routes/index');
 
 console.log(`PORT value: ${PORT}`)
 
+
+// const  {City, Airport} =require('./models/index');
+// const { Model, where } = require("sequelize");
+const db = require('./models/index')
+
+
+
+
 const setupAndStartServer = async ()=>{
 
 
@@ -20,10 +28,46 @@ const setupAndStartServer = async ()=>{
 
 app.use('/api',ApiRoutes)
 
+
+
+
+
   app.listen(PORT, async ()=>{
 
     console.log(`server started at port ${PORT}`);
     
+    if(process.env.SYNC_DB){
+      db.sequelize.sync({alter: true})
+    }
+
+
+// const city = await City.findOne({
+//   where: {
+//     id: 1
+//   }
+// });
+
+
+// const airports= await city.getAirports();
+
+
+
+// const newAirport = await Airport.findOne({
+//  where: {
+//   id: 6
+//  }
+// })
+
+
+
+// await city.addAirport(newAirport);
+// await city.addAirport({
+//   name: 'rajiv gandhi Airport'
+// })
+// console.log(city,airports);
+
+
+
   })
 
 }
