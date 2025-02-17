@@ -12,7 +12,7 @@ console.log(`PORT value: ${PORT}`)
 // const  {City, Airport} =require('./models/index');
 // const { Model, where } = require("sequelize");
 const db = require('./models/index')
-
+const {Airplane} = require('./models/index')
 
 
 
@@ -41,6 +41,9 @@ app.use('/api',ApiRoutes)
     }
 
 
+
+
+
 // const city = await City.findOne({
 //   where: {
 //     id: 1
@@ -65,6 +68,18 @@ app.use('/api',ApiRoutes)
 //   name: 'rajiv gandhi Airport'
 // })
 // console.log(city,airports);
+
+
+
+
+// we can diectly create a airplane 
+
+// await Airplane.create({
+//   modelNumber: 'Bombardier CRJ'
+// });
+
+
+
 
 
 

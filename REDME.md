@@ -55,7 +55,8 @@ and then execute
        Relationship==> city has many airports and  airports belongs to a city (one to many)
 
        
-
+npx sequelize model:generate --name Airport --attributes
+ name:String,address:String,id:integer
 
 
 
